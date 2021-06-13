@@ -25,11 +25,19 @@ export class App extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.state.contacts.push({
-      id: uuid(),
-      name: this.state.name,
-      number: this.state.number,
-    });
+    if (
+      this.state.contacts.some(
+        item => item.name.toLowerCase() === this.state.name.toLowerCase(),
+      )
+    ) {
+      alert(`${this.state.name} is already in contacts!`);
+    } else {
+      this.state.contacts.push({
+        id: uuid(),
+        name: this.state.name,
+        number: this.state.number,
+      });
+    }
     this.setState({ name: '', number: '' });
     /*console.log(this.state)*/
   };
