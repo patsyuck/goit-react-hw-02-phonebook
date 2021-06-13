@@ -9,10 +9,11 @@ export class App extends Component {
   state = {
     contacts: [],
     name: '',
+    number: '',
   };
 
-  handleChange = event => {
-    this.setState({ name: event.target.value });
+  handleChange = property => event => {
+    this.setState({ [property]: event.target.value });
   };
 
   handleSubmit = event => {
@@ -20,8 +21,9 @@ export class App extends Component {
     this.state.contacts.push({
       id: uuid(),
       name: this.state.name,
+      number: this.state.number,
     });
-    this.setState({ name: '' });
+    this.setState({ name: '', number: '' });
     /*console.log(this.state)*/
   };
 
@@ -31,6 +33,7 @@ export class App extends Component {
         <h1>Phonebook</h1>
         <ContactForm
           name={this.state.name}
+          number={this.state.number}
           onChange={this.handleChange}
           onSubmit={this.handleSubmit}
         />

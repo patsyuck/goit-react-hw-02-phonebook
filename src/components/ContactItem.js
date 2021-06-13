@@ -1,5 +1,9 @@
-const ContactItem = ({ key, name }) => {
-  return <li key={key}>{name}</li>;
+const ContactItem = ({ key, name, number }) => {
+  return (
+    <li key={key}>
+      {name}: {number}
+    </li>
+  );
 };
 
 export default ContactItem;
