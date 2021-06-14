@@ -42,6 +42,22 @@ export class App extends Component {
     /*console.log(this.state)*/
   };
 
+  /*handleDelete = (id) => {
+    this.setState({ contacts: this.state.contacts.filter(item => item.id !== id) })
+  }*/
+
+  handleDelete = id => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(item => item.id !== id),
+    }));
+  };
+
+  /*handleDelete = (id, name, number) => {
+    const contact = { 'id': id, 'name': name, 'number': number };
+    const index = this.state.contacts.indexOf(contact);
+    this.state.contacts.splice(index, 1);
+  }*/
+
   render() {
     return (
       <div>
@@ -54,7 +70,11 @@ export class App extends Component {
         />
         <h2>Contacts</h2>
         <Filter filter={this.state.filter} onChange={this.handleChange} />
-        <ContactList friends={this.state.contacts} filter={this.state.filter} />
+        <ContactList
+          friends={this.state.contacts}
+          filter={this.state.filter}
+          onClick={this.handleDelete}
+        />
       </div>
     );
   }

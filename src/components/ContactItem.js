@@ -1,7 +1,14 @@
-const ContactItem = ({ key, name, number }) => {
+const ContactItem = ({ id, name, number, onClick }) => {
   return (
-    <li key={key}>
+    <li key={id}>
       {name}: {number}
+      <button
+        onClick={() => {
+          onClick(id /*, {name}, {number}*/);
+        }}
+      >
+        Delete
+      </button>
     </li>
   );
 };

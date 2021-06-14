@@ -1,6 +1,6 @@
 import ContactItem from './ContactItem';
 
-const ContactList = ({ friends, filter }) => {
+const ContactList = ({ friends, filter, onClick }) => {
   return (
     <ul>
       {friends
@@ -9,9 +9,10 @@ const ContactList = ({ friends, filter }) => {
         )
         .map(friend => (
           <ContactItem
-            key={friend.id}
+            id={friend.id}
             name={friend.name}
             number={friend.number}
+            onClick={onClick}
           />
         ))}
     </ul>
