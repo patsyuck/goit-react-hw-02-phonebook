@@ -39,24 +39,13 @@ export class App extends Component {
       });
     }
     this.setState({ name: '', number: '' });
-    /*console.log(this.state)*/
   };
-
-  /*handleDelete = (id) => {
-    this.setState({ contacts: this.state.contacts.filter(item => item.id !== id) })
-  }*/
 
   handleDelete = id => {
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(item => item.id !== id),
     }));
   };
-
-  /*handleDelete = (id, name, number) => {
-    const contact = { 'id': id, 'name': name, 'number': number };
-    const index = this.state.contacts.indexOf(contact);
-    this.state.contacts.splice(index, 1);
-  }*/
 
   render() {
     return (

@@ -4,7 +4,7 @@ const ContactItem = ({ id, name, number, onClick }) => {
       {name}: {number}
       <button
         onClick={() => {
-          onClick(id /*, {name}, {number}*/);
+          onClick(id);
         }}
       >
         Delete
