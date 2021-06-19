@@ -14,4 +14,20 @@ const ContactForm = ({ name, number, onChange, onSubmit }) => {
   );
 };
 
+/*const ContactForm = ({onSubmit}) => {
+  return (
+    <form onSubmit={onSubmit}>
+      <label>
+        Name
+        <input name="contactName" />
+      </label>
+      <label>
+        Number
+        <input name="contactNumber" />
+      </label>
+      <button type="submit">Add contact</button>
+    </form>
+  );
+};*/
+
 export default ContactForm;
